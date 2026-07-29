@@ -2,6 +2,7 @@
 
 print("Hello, this is first program!")
 
-print("Mera naam Ali hai")
+print("My name is Ali Hassan")
 
 print(5 + 3)
+print(9*6)
