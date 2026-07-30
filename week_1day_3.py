@@ -1,4 +1,8 @@
 #operators in python
+import email
+from webbrowser import get
+
+
 num1 = int(input("enter first number: "))
 num2 = int(input("enter second number: "))
 
@@ -101,6 +105,8 @@ for color in colors:
 #checking if an item exists in a tuple
 print("Is 'green' in colors tuple?", "green" in colors)
 
+
+
 #set in python
 set1 = {1, 2, 3, 4, 5}
 set2 = {4, 5, 6, 7, 8}
@@ -120,3 +126,43 @@ print("Set 1 after adding 6:", set1)
 set2.remove(4)
 print("Set 2 after removing 4:", set2)
 
+#removing duplicates from a list using set
+set3 = {1, 2, 3,3,4,4,5,5,6,6,6,6,7,7,8,8,9,9}
+print("Set 3:", set3)
+
+
+
+#dictionary in python
+my_info = {
+    "name": "Ali",
+    "age": 25,
+    "city": "Lalian"
+}
+print("My Info Dictionary:", my_info)
+
+print("Name:", my_info["name"])
+print("Age:", my_info["age"])   
+print("City:", my_info["city"])
+
+
+print("Country:", my_info.get("country", "Not specified"))
+print("Email:", my_info.get("email", "Not specified"))
+
+my_info["email"] = "ali@example.com"
+print("Updated My Info Dictionary:", my_info)
+my_info["age"] = 26
+print("Updated My Info Dictionary after changing age:", my_info)
+
+my_info.pop("city")
+print("Updated My Info Dictionary after removing city:", my_info)
+
+print("Length of my_info:", len(my_info))
+
+print("Keys in my_info:", my_info.keys())
+print("Values in my_info:", my_info.values())
+print("Items in my_info:", my_info.items())
+
+for key in my_info:
+    print (f"{key}: {my_info[key]}") 
+for key, value in my_info.items():
+    print(f"{key}: {value}")
