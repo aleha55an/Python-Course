@@ -81,3 +81,42 @@ random_numbers.sort()
 print("Sorted random numbers:", random_numbers)
 
 
+#tuple in python
+colors = ("red", "green", "blue")
+print("Colors tuple:", colors)
+
+#indexing in tuple
+
+print("First color:", colors[0])
+print("Last color:", colors[-1])
+
+#length of tuple
+
+print (len(colors))
+
+#looping through a tuple
+for color in colors:
+    print("Color:", color)
+
+#checking if an item exists in a tuple
+print("Is 'green' in colors tuple?", "green" in colors)
+
+#set in python
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+print("Set 1:", set1)
+print("Set 2:", set2)
+
+print ("Union of set1 and set2:", set1 | set2)
+print ("Intersection of set1 and set2:", set1 & set2)
+print ("Difference of set1 and set2:", set1 - set2)
+print ("Difference of set2 and set1:", set2 - set1)
+print ("Symmetric difference of set1 and set2:", set1 ^ set2)
+print ("Is set1 a subset of set2?", set1 <= set2)
+
+
+set1.add(6)
+print("Set 1 after adding 6:", set1)
+set2.remove(4)
+print("Set 2 after removing 4:", set2)
+
