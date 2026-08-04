@@ -41,7 +41,8 @@ while True:
     print("\n1. Add New Entry")
     print("2. View Entries")
     print("3. Delete File")
-    print("4. Quit")
+    print("4. Add Sample Entries")
+    print("5. Quit")
 
     choice = input("Enter your choice (1-5): ")
 
@@ -72,4 +73,30 @@ while True:
         break
     else:
         print("Invalid choice. Please enter a number between 1 and 5.")
+
+
+    
+# Function to delete a specific line from the file based on user input
+def delete_line_by_number(filename, line_number_to_delete):
+    with open(filename, "r") as file:
+        lines = file.readlines()
+    
+    # Validation: check if the line number is valid
+    if line_number_to_delete < 1 or line_number_to_delete > len(lines):
+        print(f"Error: Line number {line_number_to_delete} is out of range. The file has {len(lines)} lines.")
+        return   
+    
+    with open(filename, "w") as file:
+        for i, line in enumerate(lines):
+            if i != line_number_to_delete - 1:
+                file.write(line)
+
+    with open(filename, "r") as file:
+        print("Updated content of the file after deletion:")
+        for line in file:
+            print(line.strip())
+
+print("Enter the line number you want to delete from 'mynote.txt':")
+line_number = int(input())
+delete_line_by_number("mynote.txt", line_number)
 
