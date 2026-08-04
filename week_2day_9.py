@@ -6,7 +6,7 @@ file.close()
 
 # Reading the content of the file
 with open("mynote.txt", "r") as file:
-    content = .read()
+    content = file.read()
     print("Content of the file:")
     print(content)
 
@@ -25,13 +25,25 @@ with open("mynote.txt", "r") as file:
 import os
 
 # Simple note-taking application with file operations
+
+def add_sample_entries():
+    sample_entries = [
+        "This is my sample entry.",
+        "I am learning Python.",
+        "This is an additional line."
+    ]
+    with open("mynote.txt", "a") as file:
+        for entry in sample_entries:
+            file.write(entry + "\n")
+    print("Sample entries added successfully.")
+
 while True:
     print("\n1. Add New Entry")
     print("2. View Entries")
     print("3. Delete File")
     print("4. Quit")
 
-    choice = input("Enter your choice (1-4): ")
+    choice = input("Enter your choice (1-5): ")
 
     if choice == '1':
         entry = input("Enter your note: ")
@@ -54,7 +66,10 @@ while True:
         else:
             print(f"{file_path} does not exist.")
     elif choice == '4':
+        add_sample_entries()
+    elif choice == '5':
         print("Goodbye!")
         break
     else:
-        print("Invalid choice. Please enter a number between 1 and 4.")
+        print("Invalid choice. Please enter a number between 1 and 5.")
+

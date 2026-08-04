@@ -1,4 +1,6 @@
 This is my note.
 I am learning Python.
 This is an additional line.
-Hello
+This is my sample entry.
+I am learning Python.
+This is an additional line.
