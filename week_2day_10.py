@@ -105,3 +105,37 @@ print("fully hidden:", fully_hidden)
 print("Digit by digit:", digit_by_digit)
 
 
+#date and time
+import datetime
+
+today = datetime.date.today()
+print("Today's date:", today)
+
+#difference between two dates
+date1 = datetime.date(2023, 1, 1)
+date2 = datetime.date(2023, 12, 31)
+
+difference = date2 - date1
+print("Difference between", date2, "and", date1, "is", difference.days, "days.")
+
+
+#formatting date and time
+today = datetime.date.today()
+print(today.strftime("Today's date is: %B %d, %Y"))
+print(today.strftime("Today's date is: %A, %B %d, %Y"))
+print(today.strftime("Today's date is: %d/%m/%Y"))
+print(today.strftime("%A"))  
+
+print("Current time:", datetime.datetime.now().strftime("%H:%M:%S"))
+
+#birthday and age calculation
+birthday = input("Enter your birthday (YYYY-MM-DD): ")
+birthday_date = datetime.datetime.strptime(birthday, "%Y-%m-%d").date()
+age = today.year - birthday_date.year - ((today.month, today.day) < (birthday_date.month, birthday_date.day))
+print("Your age is:", age)
+
+event_date = input("Enter the event date (YYYY-MM-DD): ")
+days_until_event_date = datetime.datetime.strptime(event_date, "%Y-%m-%d").date()
+days_until_event = (days_until_event_date - today).days
+
+print("Days until the event:", days_until_event)
