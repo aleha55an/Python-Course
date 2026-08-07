@@ -129,13 +129,43 @@ print(today.strftime("%A"))
 print("Current time:", datetime.datetime.now().strftime("%H:%M:%S"))
 
 #birthday and age calculation
-birthday = input("Enter your birthday (YYYY-MM-DD): ")
-birthday_date = datetime.datetime.strptime(birthday, "%Y-%m-%d").date()
-age = today.year - birthday_date.year - ((today.month, today.day) < (birthday_date.month, birthday_date.day))
-print("Your age is:", age)
+try:
+    birthday = input("Enter your birthday (YYYY-MM-DD): ")
+    birthday_date = datetime.datetime.strptime(birthday, "%Y-%m-%d").date()
+    age = today.year - birthday_date.year - ((today.month, today.day) < (birthday_date.month, birthday_date.day))
+    print("Your age is:", age)
+except ValueError:
+    print("Invalid date format. Please enter your birthday in YYYY-MM-DD format.")
 
-event_date = input("Enter the event date (YYYY-MM-DD): ")
-days_until_event_date = datetime.datetime.strptime(event_date, "%Y-%m-%d").date()
-days_until_event = (days_until_event_date - today).days
+try:
+    event_date = input("Enter the event date (YYYY-MM-DD): ")
+    days_until_event_date = datetime.datetime.strptime(event_date, "%Y-%m-%d").date()
+    days_until_event = (days_until_event_date - today).days
+    print("Days until the event:", days_until_event)
+except ValueError:
+    print("Invalid date format. Please enter the event date in YYYY-MM-DD format.")
 
-print("Days until the event:", days_until_event)
+
+#math module
+import math
+
+# 1. Find area of circle
+radius = float(input("Enter radius of circle: "))
+area = math.pi * (radius ** 2)
+print(f"Area: {area:.2f}")
+
+# 2. Find GCD of two numbers
+num1 = int(input("First number: "))
+num2 = int(input("Second number: "))
+print(f"GCD: {math.gcd(num1, num2)}")
+
+# 3. Find square root and square of a number
+number = float(input("Enter a number: "))
+print(f"Square root: {math.sqrt(number):.2f}")
+print(f"Square (power 2): {math.pow(number, 2)}")
+
+# 4. Comparing floor, ceil, and trunc of a decimal number
+decimal_num = float(input("enter any decimal number: "))
+print(f"Floor: {math.floor(decimal_num)}")
+print(f"Ceil: {math.ceil(decimal_num)}")
+print(f"Trunc: {math.trunc(decimal_num)}")
